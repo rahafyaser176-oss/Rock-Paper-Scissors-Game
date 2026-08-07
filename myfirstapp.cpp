@@ -18,7 +18,7 @@ using namespace std;
 
  enum enChoice 
  {
-     Stone = 1 ,
+     Rock = 1 ,
      Paper = 2 ,
      Scissors = 3
 };
@@ -57,7 +57,7 @@ enChoice ReadPlayerChoice()
     int Choice;
     do 
     {
-        cout << "Your Choice : [1]:Stone , [2]:Paper , [3]:Scissors" << endl;
+        cout << "Your Choice : [1]:Rock , [2]:Paper , [3]:Scissors" << endl;
         cin >> Choice;
 
     } while (Choice < 1 || Choice > 3 );
@@ -74,8 +74,8 @@ string ChoiceName(enChoice Choice)
 {
     switch (Choice)
     {
-    case enChoice::Stone:
-        return "Stone";     
+    case enChoice::Rock:
+        return "Rock";     
        
     case enChoice::Paper:
         return "Paper";        
@@ -94,11 +94,11 @@ enWinner WhowonTheRound(enChoice PlayerChoice, enChoice ComputerChoice)
     if (PlayerChoice == ComputerChoice)
         return Draw;
 
-    if ((PlayerChoice == Stone && ComputerChoice == Scissors)
+    if ((PlayerChoice == Rock && ComputerChoice == Scissors)
 
         || (PlayerChoice == Scissors && ComputerChoice == Paper)
 
-        || (PlayerChoice == Paper && ComputerChoice == Stone))
+        || (PlayerChoice == Paper && ComputerChoice == Rock))
 
         return Player;
 
